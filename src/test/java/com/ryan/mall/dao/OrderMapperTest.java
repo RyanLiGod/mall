@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class OrderMapperTest extends MallApplicationTests {
 
-    @Autowired
+    @Autowired(required=false)
     OrderMapper orderMapper;
 
     @Test
