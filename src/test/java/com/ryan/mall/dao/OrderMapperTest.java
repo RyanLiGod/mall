@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class OrderMapperTest extends MallApplicationTests {
 
     @Autowired(required=false)
-    OrderMapper orderMapper;
+    private OrderMapper orderMapper;
 
     @Test
     public void deleteByPrimaryKey() {
