@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class CategoryMapperTest extends MallApplicationTests {
 
-    @Autowired(required=false)
+    @Autowired
     private CategoryMapper categoryMapper;
 
     @Test

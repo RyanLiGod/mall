@@ -39,7 +39,6 @@ public class OrderMapperTest extends MallApplicationTests {
     @Test
     public void updateByPrimaryKey() {
         Order order = orderMapper.selectByPrimaryKey(1);
-        order.setUserId(111222);
         orderMapper.updateByPrimaryKey(order);
         System.out.println(order.toString());
     }
