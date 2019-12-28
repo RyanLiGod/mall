@@ -3,7 +3,7 @@ package com.ryan.mall.controller;
 import com.ryan.mall.enums.ResponseEnum;
 import com.ryan.mall.form.UserForm;
 import com.ryan.mall.pojo.User;
-import com.ryan.mall.service.IUserService;
+import com.ryan.mall.service.impl.UserServiceImpl;
 import com.ryan.mall.vo.ResponseVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -26,8 +26,12 @@ import java.util.Objects;
 @Slf4j
 public class UserController {
 
+    private final UserServiceImpl userService;
+
     @Autowired
-    private IUserService userService;
+    public UserController(UserServiceImpl userService) {
+        this.userService = userService;
+    }
 
 //    // 前端请求方式为urlencoded时候使用@RequestParam
 //    @PostMapping("/register")

@@ -47,8 +47,8 @@
 <!--        <table tableName="mall_pay_info" domainObjectName="PayInfo" enableCountByExample="false"-->
 <!--               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" />-->
 
-        <table tableName="mall_user" domainObjectName="User" enableCountByExample="false"
-               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" />
+<!--        <table tableName="mall_user" domainObjectName="User" enableCountByExample="false"-->
+<!--               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" />-->
 
     </context>
 </generatorConfiguration>

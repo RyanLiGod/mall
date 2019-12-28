@@ -13,12 +13,13 @@ public class UserForm {
 
     // @NotEmpty 用于集合
     // @NotBlank 用于String，会判断空格
-    @NotBlank(message = "用户名不能为空")
+    // @NotBlank(message = "用户名不能为空")
+    @NotBlank
     private String username;
 
-    @NotBlank(message = "密码不能为空")
+    @NotBlank
     private String password;
 
-    @NotBlank(message = "邮箱不能为空")
+    @NotBlank
     private String email;
 }

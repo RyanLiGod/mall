@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class RuntimeExceptionHandler {
 
+//    @ResponseStatus(HttpStatus.FORBIDDEN)
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody
-//    @ResponseStatus(HttpStatus.FORBIDDEN)
     public ResponseVo handle(RuntimeException e) {
         return ResponseVo.error(ResponseEnum.ERROR, e.getMessage());
     }
