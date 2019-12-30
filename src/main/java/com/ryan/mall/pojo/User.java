@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
     private Integer id;
 

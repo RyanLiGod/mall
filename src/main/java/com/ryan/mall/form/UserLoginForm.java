@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
  * @date 2019/12/25
  */
 @Data
-public class UserForm {
+public class UserLoginForm {
 
     // @NotEmpty 用于集合
     // @NotBlank 用于String，会判断空格
@@ -19,7 +19,4 @@ public class UserForm {
 
     @NotBlank
     private String password;
-
-    @NotBlank
-    private String email;
 }

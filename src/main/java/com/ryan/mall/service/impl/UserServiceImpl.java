@@ -19,8 +19,12 @@ import java.nio.charset.StandardCharsets;
 @Service
 public class UserServiceImpl implements IUserService {
 
-    @Autowired(required = false)
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
+
+    @Autowired
+    public UserServiceImpl(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
 
     /**
      * 注册
@@ -28,7 +32,7 @@ public class UserServiceImpl implements IUserService {
      * @param user 注册用户信息
      */
     @Override
-    public ResponseVo register(User user) {
+    public ResponseVo<User> register(User user) {
         //username，email不能重复
         int countByUsername = userMapper.countByUsername(user.getUsername());
         if (countByUsername > 0) {
@@ -57,7 +61,20 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void login(User user) {
+    public ResponseVo<User> login(String username, String password) {
+        User user = userMapper.selectByUsername(username);
+        if (user == null) {
+            //用户不存在，应提示"用户名或密码错误"
+            return ResponseVo.error(ResponseEnum.USERNAME_OR_PASSWORD_ERROR);
+        }
 
+        //判断密码是否一致
+        if (!user.getPassword().equalsIgnoreCase(DigestUtils.md5DigestAsHex(password.getBytes(StandardCharsets.UTF_8)))) {
+            //密码错误
+            return ResponseVo.error(ResponseEnum.USERNAME_OR_PASSWORD_ERROR);
+        }
+
+        user.setPassword("");
+        return ResponseVo.success(user);
     }
 }
