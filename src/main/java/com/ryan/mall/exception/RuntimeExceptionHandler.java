@@ -17,7 +17,13 @@ public class RuntimeExceptionHandler {
 //    @ResponseStatus(HttpStatus.FORBIDDEN)
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody
-    public ResponseVo handle(RuntimeException e) {
+    public ResponseVo<Object> handle(RuntimeException e) {
         return ResponseVo.error(ResponseEnum.ERROR, e.getMessage());
+    }
+
+    @ExceptionHandler(UserLoginException.class)
+    @ResponseBody
+    public ResponseVo<Object> userLoginHandle() {
+        return ResponseVo.error(ResponseEnum.NEED_LOGIN);
     }
 }

@@ -76,9 +76,6 @@ public class UserController {
     public ResponseVo<User> userInfo(HttpSession session) {
         log.info("/user sessionId={}", session.getId());
         User user = (User) session.getAttribute(MallConst.CURRENT_USER);
-        if (user == null) {
-            return ResponseVo.error(ResponseEnum.NEED_LOGIN);
-        }
 
         return ResponseVo.success(user);
     }
@@ -86,11 +83,8 @@ public class UserController {
     @PostMapping("/user/logout")
     public ResponseVo<User> logout(HttpSession session) {
         log.info("/user/logout sessionId={}", session.getId());
-        User user = (User) session.getAttribute(MallConst.CURRENT_USER);
-        if (user == null) {
-            return ResponseVo.error(ResponseEnum.NEED_LOGIN);
-        }
         session.removeAttribute(MallConst.CURRENT_USER);
+
         return ResponseVo.success();
     }
 }
