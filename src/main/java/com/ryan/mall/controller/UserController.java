@@ -65,7 +65,7 @@ public class UserController {
         }
         ResponseVo<User> userResponseVo = userService.login(userLoginForm.getUsername(), userLoginForm.getPassword());
 
-        // 设置session，保存在内存里，可改进为token+redis保存
+        // 设置session，保存在内存里，可改进为token+redis保存（分布式session）
         session.setAttribute(MallConst.CURRENT_USER, userResponseVo.getData());
         log.info("/user/login sessionId={}", session.getId());
 

@@ -50,5 +50,8 @@
 <!--        <table tableName="mall_user" domainObjectName="User" enableCountByExample="false"-->
 <!--               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" />-->
 
+<!--        <table tableName="mall_category" domainObjectName="Category" enableCountByExample="false"-->
+<!--               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" />-->
+
     </context>
 </generatorConfiguration>

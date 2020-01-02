@@ -4,10 +4,6 @@ import lombok.Data;
 
 import java.util.Date;
 
-/**
- * @author Ryan Li
- * @date 2019/12/11
- */
 @Data
 public class Category {
     private Integer id;
@@ -16,7 +12,7 @@ public class Category {
 
     private String name;
 
-    private Integer status;
+    private Boolean status;
 
     private Integer sortOrder;
 
